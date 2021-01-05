@@ -1,5 +1,10 @@
-<h3>Title:<%= @book.title %></h3>
-<h3>Body:<%= @book.body %></h3>
-
-<span><%= link_to 'Edit', edit_book_path(@book.id)%></span>
-<span><%= link_to 'Back', books_path %></span>
+<div class="show">
+    <% if flash[:success] %>
+        <p class="success"><%= flash[:success] %></p>
+    <% end %>
+    
+    <p><strong>Title:</strong><%= @book.title %></p>
+    <p><strong>Body:</strong><%= @book.body %></p>
+    
+    <span class="border-right"><%= link_to 'Edit', edit_book_path(@book.id)%></span>|<span><%= link_to 'Back', books_path %></span>
+</div>
